@@ -1,0 +1,7 @@
+# Defense in depth: this folder should only ever contain validated
+# image files (server-side enforced in php/api.php), but block script
+# execution here regardless, in case that ever changes.
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|cgi|sh)$">
+  Deny from all
+</FilesMatch>
+php_flag engine off
